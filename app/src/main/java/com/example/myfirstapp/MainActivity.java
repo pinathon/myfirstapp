@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity{
                 String Email=editTextEmail.getText().toString().trim();
                 String Password=editTextPassword.getText().toString().trim();
                 if(TextUtils.isEmpty(Email)){
-                    Toast.makeText(MainActivity.this, "Enter Name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(Password)){
