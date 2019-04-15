@@ -30,37 +30,11 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editTextEmail=findViewById(R.id.editTextemail);
-        editTextPassword=findViewById(R.id.editTextpassword);
-        buttonSignup=findViewById(R.id.sign_up);
+        editTextEmail = findViewById(R.id.editTextemail);
+        editTextPassword = findViewById(R.id.editTextpassword);
+        buttonSignup = findViewById(R.id.sign_up);
 
-        firebaseAuth=FirebaseAuth.getInstance();
-
-        buttonSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Email=editTextEmail.getText().toString().trim();
-                String Password=editTextPassword.getText().toString().trim();
-                if(TextUtils.isEmpty(Email)){
-                    Toast.makeText(MainActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(Password)){
-                    Toast.makeText(MainActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                firebaseAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            setContentView(R.layout.hello);
-                        }
-                    }
-                });
-            }
-        });
-
+        firebaseAuth = FirebaseAuth.getInstance();
 
     }
 }
