@@ -34,7 +34,7 @@ public class login extends AppCompatActivity {
             startActivity(new Intent(login.this, MainActivity.class));
             finish();
         }
-        // set the view now
+      
         setContentView(R.layout.activity_login);
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
@@ -42,7 +42,6 @@ public class login extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnReset = (Button) findViewById(R.id.btn_reset_password);
-        //Get Firebase auth instance
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +76,6 @@ public class login extends AppCompatActivity {
 
                                 progressBar.setVisibility(View.GONE);
                                 if (!task.isSuccessful()) {
-                                    // there was an error
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
                                     } else {
@@ -103,7 +101,6 @@ public class login extends AppCompatActivity {
         final EditText editEmail = (EditText) dialogView.findViewById(R.id.email);
         final Button btnReset = (Button) dialogView.findViewById(R.id.btn_reset_password);
         final ProgressBar progressBar1 = (ProgressBar) dialogView.findViewById(R.id.progressBar);
-        //dialogBuilder.setTitle("Send Photos");
         final AlertDialog dialog = dialogBuilder.create();
         btnReset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
