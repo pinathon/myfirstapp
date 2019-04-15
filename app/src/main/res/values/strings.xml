@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Myfirstapp</string>
+    <string name="action_sign_in_short">Register</string>
+    <string name="email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Sign_up">Sign Up</string>
+</resources>
